@@ -44,7 +44,7 @@ insert into public.profile_settings (id) values (1) on conflict (id) do nothing;
 
 -- Replace this UUID before running:
 insert into public.admin_users(user_id)
-values ('YOUR_ADMIN_USER_UUID')
+values ('d0973193-8ff0-480d-baab-e5c84515ef40')
 on conflict (user_id) do nothing;
 
 alter table public.admin_users enable row level security;
