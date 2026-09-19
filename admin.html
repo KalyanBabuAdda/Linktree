@@ -12,144 +12,186 @@
          ADMIN LOGIN POSITION / SIZE OVERRIDES
     ========================================== -->
     <style>
+/* =========================================
+   ADMIN LOGIN — CENTERED + RESIZABLE
+========================================= */
 
-        /* Full login screen */
-        #loginGate.login-gate {
-            width: 100%;
-            min-height: 100vh;
+/* Full login screen */
+#loginGate.login-gate {
+    position: fixed !important;
+    inset: 0 !important;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    width: 100% !important;
+    height: 100% !important;
 
-            padding: 30px;
-            box-sizing: border-box;
-        }
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 
+    padding: 30px !important;
+    margin: 0 !important;
 
-        /* Login card */
-        #loginGate .login-card {
-            width: 600px;
-            max-width: 90vw;
-            min-width: 420px;
+    box-sizing: border-box !important;
 
-            min-height: 600px;
-
-            padding: 54px;
-
-            box-sizing: border-box;
-
-            /* Manual resize */
-            resize: horizontal;
-            overflow: auto;
-
-            /* Keep card from becoming ridiculously large */
-            max-height: 90vh;
-        }
+    overflow: auto !important;
+}
 
 
-        /* Bigger branding */
-        #loginGate .brand {
-            font-size: 20px;
-            letter-spacing: 12px;
-            margin-bottom: 70px;
-        }
+/* Login card */
+#loginGate .login-card {
+    position: relative !important;
+
+    width: 600px;
+    min-width: 420px;
+    max-width: 900px;
+
+    /* IMPORTANT:
+       Don't force a large height anymore */
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    padding: 54px !important;
+    margin: auto !important;
+
+    box-sizing: border-box !important;
+
+    /* Desktop manual resizing */
+    resize: horizontal;
+
+    /* Required for browser resize,
+       but prevents the ugly vertical scrollbar */
+    overflow-x: auto;
+    overflow-y: visible;
+
+    border-radius: 28px;
+}
 
 
-        /* Bigger Admin Login heading */
-        #loginGate .login-card h2 {
-            font-size: 38px;
-            margin-bottom: 12px;
-        }
+/* Branding */
+#loginGate .brand {
+    font-size: 20px;
+    letter-spacing: 12px;
+
+    margin: 0 0 65px 0 !important;
+}
 
 
-        /* Description */
-        #loginGate .login-card > p {
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
+/* Admin Login */
+#loginGate .login-card h2 {
+    font-size: 38px;
+    line-height: 1.15;
+
+    margin: 0 0 14px 0 !important;
+}
 
 
-        /* Labels */
-        #loginGate .login-card label {
-            display: block;
-            font-size: 17px;
-            margin-bottom: 22px;
-        }
+/* Description */
+#loginGate .login-card > p {
+    font-size: 18px;
+    line-height: 1.6;
+
+    margin: 0 0 30px 0 !important;
+}
 
 
-        /* Email + Password fields */
-        #loginGate .login-card input {
-            width: 100%;
-            min-height: 60px;
+/* Labels */
+#loginGate .login-card label {
+    display: block;
 
-            margin-top: 10px;
-            padding: 0 18px;
+    width: 100%;
 
-            font-size: 17px;
-            box-sizing: border-box;
-        }
+    font-size: 17px;
 
-
-        /* Sign In button */
-        #loginGate .login-card button[type="submit"] {
-            width: 100%;
-            min-height: 60px;
-
-            margin-top: 10px;
-
-            font-size: 18px;
-            font-weight: 700;
-        }
+    margin: 0 0 22px 0 !important;
+}
 
 
-        /* Bottom helper text */
-        #loginGate #loginMsg {
-            display: block;
-            margin-top: 28px;
+/* Inputs */
+#loginGate .login-card input {
+    display: block;
 
-            font-size: 14px;
-            line-height: 1.6;
-        }
+    width: 100% !important;
+    min-height: 60px;
+
+    margin-top: 10px !important;
+
+    padding: 0 18px !important;
+
+    font-size: 17px;
+
+    box-sizing: border-box;
+}
 
 
-        /* =========================================
-           MOBILE
-        ========================================== */
+/* Sign In */
+#loginGate .login-card button[type="submit"] {
+    display: block;
 
-        @media (max-width: 650px) {
+    width: 100% !important;
+    min-height: 60px;
 
-            #loginGate.login-gate {
-                padding: 18px;
-            }
+    margin: 8px 0 0 0 !important;
 
-            #loginGate .login-card {
-                width: 100%;
-                min-width: 0;
-                max-width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+}
 
-                min-height: auto;
 
-                padding: 32px 24px;
+/* Helper text */
+#loginGate #loginMsg {
+    display: block;
 
-                /* Disable resizing on phones */
-                resize: none;
-                overflow: visible;
-            }
+    margin-top: 28px !important;
 
-            #loginGate .brand {
-                font-size: 16px;
-                letter-spacing: 8px;
-                margin-bottom: 45px;
-            }
+    font-size: 14px;
+    line-height: 1.6;
+}
 
-            #loginGate .login-card h2 {
-                font-size: 30px;
-            }
 
-        }
+/* =========================================
+   MOBILE
+========================================= */
 
-    </style>
+@media (max-width: 650px) {
+
+    #loginGate.login-gate {
+        position: fixed !important;
+
+        padding: 18px !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+
+    #loginGate .login-card {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 480px !important;
+
+        padding: 32px 24px !important;
+
+        resize: none !important;
+
+        overflow: visible !important;
+    }
+
+
+    #loginGate .brand {
+        font-size: 16px;
+        letter-spacing: 8px;
+
+        margin-bottom: 42px !important;
+    }
+
+
+    #loginGate .login-card h2 {
+        font-size: 30px;
+    }
+
+}
+</style>
 
 </head>
 
