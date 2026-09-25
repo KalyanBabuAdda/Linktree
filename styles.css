@@ -34,3 +34,21 @@
 
 /* v11.5 appearance controls */
 .public[data-align=left] .link-copy{text-align:left}.public[data-align=center] .link-copy{text-align:center}.public[data-align=right] .link-copy{text-align:right}.public[data-show-icons=false] .link-card{grid-template-columns:1fr 24px}.public[data-show-icons=false] .link-icon{display:none}.avatar img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}.check-row{display:flex!important;grid-template-columns:none!important;align-items:center;gap:10px!important}.check-row input{width:auto!important;accent-color:#f13c58}.panel select{width:100%;padding:12px;border:1px solid #ffffff1a;border-radius:10px;background:#080c12;color:white}
+
+/* ========================================
+   PUBLIC PAGE - PREVENT STARTUP FLASH
+======================================== */
+
+.profile.public-loading {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.profile.public-ready {
+    opacity: 1;
+    visibility: visible;
+}
+
+body.public .profile {
+    transition: opacity 0.3s ease;
+}
